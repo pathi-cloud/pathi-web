@@ -35,7 +35,7 @@ jobs:
     secrets: inherit
     with:
       tag_version: ${{ github.sha }}
-      ghcr_repo: 'tasks-app'
+      ghcr_repo: 'pathi-web'
   
   helm:
     if: github.ref == 'refs/heads/main'
