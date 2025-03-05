@@ -1,6 +1,6 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import AppHeader from "./components/app-header"
-import { Typography, Box, Toolbar, Card, Paper } from '@mui/material';
+import { Typography, Box, Toolbar, Card } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import myImage from './assets/pathi-yugandhar.jpeg';
 //import Grid from '@mui/material/Grid2';
