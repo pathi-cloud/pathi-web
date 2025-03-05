@@ -35,18 +35,15 @@ function App() {
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', mt: '-5%',flexDirection: {xs: 'column', sm: 'row'}, gap: '10px'}}>
-
-            <Card variant="outlined" sx={{ minWidth: 350 }}>
-              <FrontEndSkills />
-            </Card>
-            <Card variant="outlined" sx={{ minWidth: 350 }}>
-              <BackEndSkills />
-            </Card>
-
-            <Card variant="outlined" sx={{ minWidth: 350 }}>
-              <MiscellaneousSkills />
-            </Card>
-
+          <Card variant="outlined" sx={{ minWidth: 350 }}>
+            <FrontEndSkills />
+          </Card>
+          <Card variant="outlined" sx={{ minWidth: 350 }}>
+            <BackEndSkills />
+          </Card>
+          <Card variant="outlined" sx={{ minWidth: 350 }}>
+            <MiscellaneousSkills />
+          </Card>
         </Box>
       </Box> 
       <Box component="footer" sx={{ 
