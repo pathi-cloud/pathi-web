@@ -33,11 +33,19 @@ spec:
             {{- with .pathType }}
             pathType: {{ . }}
             {{- end }}
+            {{- if eq .path "/tasks_assets" }}
+            backend:
+              service:
+                name: tasks-app-tasks-app
+                port:
+                  number: 8080
+            {{- else }}
             backend:
               service:
                 name: {{ include "pathi-web.fullname" $ }}
                 port:
                   number: {{ $.Values.service.port }}
+            {{- end }}
           {{- end }}
     {{- end }}
 {{- end }}

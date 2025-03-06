@@ -1,14 +1,14 @@
-import { Toolbar, CssBaseline } from '@mui/material';
+import { Toolbar, CssBaseline, Box } from '@mui/material';
 import { Outlet } from "react-router";
 import AppHeader from "./components/app-header"
 
 export default function Dashboard() {
   return (
-    <div>
+    <Box sx={{ width: "100vw", height: "100vh", display: "flex", flexDirection: "column" }}>
       <CssBaseline />
       <AppHeader />
       <Toolbar />
       <Outlet />
-    </div>
+    </Box>
   );
 }
