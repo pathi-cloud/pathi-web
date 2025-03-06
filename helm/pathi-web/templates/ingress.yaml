@@ -36,7 +36,7 @@ spec:
             {{- if eq .path "/tasks_assets" }}
             backend:
               service:
-                name: tasks-app-tasks-app
+                name: task-app-tasks-app
                 port:
                   number: 8080
             {{- else }}

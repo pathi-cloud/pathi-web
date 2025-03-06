@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: task-app-tasks-app  # This service name is referenced in Ingress
+  namespace: pathi-web
+spec:
+  type: ExternalName
+  externalName: task-app-tasks-app.tasks-app.svc.cluster.local
