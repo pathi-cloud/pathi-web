@@ -5,16 +5,24 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import { NavLink } from 'react-router';
+import StyledNavLink from './styled-nav-link';
+import ListItem from '@mui/material/ListItem';
 
 const drawerWidth = 240;
-const navItems = ['Resume', 'Application', 'Portfolio', 'Articles'];
+const navItems = [ 
+  { 
+    label: 'Application',
+    path: '/application'
+  },
+  {
+    label: 'Articles',
+    path: '/articles'
+  }
+];
 
 export default function AppHeader() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -31,10 +39,8 @@ export default function AppHeader() {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+          <ListItem key={item.label} disablePadding>
+            <StyledNavLink path={item.path} label={item.label} />
           </ListItem>
         ))}
       </List>
@@ -59,13 +65,13 @@ export default function AppHeader() {
             component="div"
             sx={{ flexGrow: 1, display: { color: 'blue' } }}
           >
-            PathiYugandhar.com
+            <NavLink to="/">
+              PathiYugandhar.com
+            </NavLink>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: 'blue' }}>
-                {item}
-              </Button>
+              <StyledNavLink path={item.path} label={item.label} />
             ))}
           </Box>
         </Toolbar>
