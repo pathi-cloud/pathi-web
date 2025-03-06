@@ -70,9 +70,13 @@ ingress:
       paths:
         - path: /
           pathType: Prefix
+        - path: /tasks_assets
+          pathType: Prefix
     - host: www.pathiyugandhar.com
       paths:
         - path: /
+          pathType: Prefix
+        - path: /tasks_assets
           pathType: Prefix
   tls:
    - secretName: example-tls
