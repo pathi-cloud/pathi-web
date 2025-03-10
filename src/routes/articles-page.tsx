@@ -1,5 +1,5 @@
 const ArticlesPage = () => {
-    return <p>Articles Page, Coming Soon...</p>
+  return <p>Articles Page, Coming Soon...</p>
 }
 
-export default ArticlesPage;
+export default ArticlesPage

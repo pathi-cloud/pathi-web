@@ -7,12 +7,11 @@ on:
       - main
 
 permissions:
-  actions: read 
-  contents: write 
-  id-token: write 
+  actions: read
+  contents: write
+  id-token: write
   packages: write
   pages: write
-
 
 concurrency:
   # Only allows one build per workflow & branch/PR/tag
@@ -26,7 +25,7 @@ jobs:
     uses: pathi-cloud/github-workflows/.github/workflows/ci-ui-application.yml@main
     with:
       run_acceptance: false
-  
+
   docker:
     if: github.ref == 'refs/heads/main'
     needs:
@@ -35,8 +34,8 @@ jobs:
     secrets: inherit
     with:
       tag_version: ${{ github.sha }}
-      ghcr_repo: 'pathi-web'
-  
+      ghcr_repo: "pathi-web"
+
   helm:
     if: github.ref == 'refs/heads/main'
     needs:
@@ -45,8 +44,7 @@ jobs:
     uses: pathi-cloud/github-workflows/.github/workflows/ci-helm-linode.yml@main
     secrets: inherit
     with:
-      release_name: 'pathi-web'
-      chart_path: './helm/pathi-web'
-      namespace: 'pathi-web'
+      release_name: "pathi-web"
+      chart_path: "./helm/pathi-web"
+      namespace: "pathi-web"
       image_tag: ${{ github.sha }}
-
