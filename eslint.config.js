@@ -5,14 +5,21 @@ import reactlint from "eslint-plugin-react"
 import reactHooks from "eslint-plugin-react-hooks"
 import reactRefresh from "eslint-plugin-react-refresh"
 import prettier from "eslint-plugin-prettier/recommended"
+import importPlugin from "eslint-plugin-import"
+import jestPlugin from "eslint-plugin-jest"
 
 export default tseslint.config(
   { ignores: ["dist"] },
   eslint.configs.recommended,
+  importPlugin.flatConfigs.recommended,
   ...tseslint.configs.recommended,
   {
     ...reactlint.configs.flat.recommended,
     settings: {
+      "import/resolver": {
+        typescript: true,
+        node: true,
+      },
       react: {
         version: "detect",
       },
@@ -33,6 +40,10 @@ export default tseslint.config(
       ],
       "react/react-in-jsx-scope": "off",
     },
+  },
+  {
+    files: ["__tests__/*"],
+    ...jestPlugin.configs["flat/recommended"],
   },
   prettier
 )
